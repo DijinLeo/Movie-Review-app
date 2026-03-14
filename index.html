@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Review System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">Movie Review App</p>
+                <h1>Discover, rate, and curate your favorite films.</h1>
+                <p class="hero-text">
+                    A cleaner movie dashboard with quick search, genre filters, and review cards that feel closer to a modern app UI.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-pill">
+                        <span class="stat-value" id="movieCount">0</span>
+                        <span class="stat-label">Movies</span>
+                    </div>
+                    <div class="stat-pill">
+                        <span class="stat-value" id="reviewCount">0</span>
+                        <span class="stat-label">Reviews</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-panel">
+                <div class="panel-glow"></div>
+            </div>
+        </header>
+
+        <main class="dashboard">
+            <section class="toolbar card">
+                <div class="section-heading">
+                    <p class="section-kicker">Browse Library</p>
+                    <h2>Find a movie fast</h2>
+                </div>
+                <div class="controls-grid">
+                    <label class="field">
+                        <span>Search</span>
+                        <input type="text" id="search" placeholder="Search movies by title">
+                    </label>
+
+                    <label class="field">
+                        <span>Genre</span>
+                        <select id="genreFilter">
+                            <option value="All">All Genres</option>
+                            <option value="Sci-Fi">Sci-Fi</option>
+                            <option value="Action">Action</option>
+                            <option value="Romance">Romance</option>
+                        </select>
+                    </label>
+
+                    <div class="sort-actions">
+                        <span>Sort</span>
+                        <div class="button-row">
+                            <button type="button" class="secondary-btn" onclick="sortAZ()">A-Z</button>
+                            <button type="button" class="secondary-btn" onclick="sortZA()">Z-A</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="add-movie card">
+                <div class="section-heading">
+                    <p class="section-kicker">Create Entry</p>
+                    <h2>Add a new movie</h2>
+                </div>
+                <div class="form-grid">
+                    <label class="field">
+                        <span>Movie Title</span>
+                        <input id="title" placeholder="Enter movie title">
+                    </label>
+                    <label class="field">
+                        <span>Genre</span>
+                        <input id="genre" placeholder="Ex: Thriller">
+                    </label>
+                    <label class="field">
+                        <span>Director</span>
+                        <input id="director" placeholder="Director name">
+                    </label>
+                    <label class="field">
+                        <span>Special Cast</span>
+                        <input id="cast" placeholder="Lead cast or standout role">
+                    </label>
+                </div>
+                <button type="button" class="primary-btn" onclick="addMovie()">Add Movie</button>
+            </section>
+
+            <section class="library">
+                <div class="section-heading section-heading-row">
+                    <div>
+                        <p class="section-kicker">Your Collection</p>
+                        <h2>Movie cards</h2>
+                    </div>
+                    <p class="library-note">Tap into reviews, cast, and directors in one place.</p>
+                </div>
+                <div id="movieList" class="movie-grid"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
